@@ -99,7 +99,7 @@ header .row .sp_menu {
   height: 100vh;
   display: flex;
   align-items: center;
-  padding: 20px;
+  padding: 80px 20px 80px;
   background-color: #ffffff;
   z-index: 20;
   opacity: 0;
