@@ -107,6 +107,7 @@ header .row .sp_menu {
   transform: translateX(100%);
   transition-property: all;
   transition-duration: 0.2s;
+  overflow-y: scroll;
 }
 .sp_menu nav ul {
   display: inline-block;
