@@ -1,0 +1,438 @@
+html {
+  overflow-x: hidden;
+}
+body {
+  font-family: "Noto Sans JP", sans-serif;
+}
+header {
+  /* position: sticky;
+  top: 0; */
+  background-color: #ffffff;
+  @media screen and (max-width: 960px) {
+    padding-bottom: 20px;
+  }
+}
+header .row {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  max-width: 1700px;
+  margin: 0 auto;
+  align-items: center;
+}
+header .row .logo {
+  text-align: left;
+  margin: 5px 0;
+}
+header .row .logo span {
+  font-size: 16px;
+  font-weight: 300;
+}
+header .row .logo a {
+  display: inline-block;
+  font-size: 36px;
+  font-weight: 700;
+}
+header nav {
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+}
+header nav ul {
+  display: flex;
+  @media screen and (max-width: 960px) {
+    justify-content: space-between;
+    margin: 20px 0 20px;
+  }
+}
+header nav ul li {
+  margin-left: 30px;
+  @media screen and (max-width: 960px) {
+    margin: auto;
+  }
+}
+header nav ul li a {
+  font-weight: 500;
+  transition: 0.2s;
+}
+header nav ul li a:hover {
+  opacity: 50%;
+  transition: 0.2s;
+}
+header .row .sp_menu {
+  display: none;
+  @media screen and (max-width: 960px) {
+    display: block;
+  }
+}
+#hmb {
+  width: 32px;
+  height: 28px;
+  cursor: pointer;
+  position: relative;
+  z-index: 30;
+}
+#hmb span {
+  width: 32px;
+  height: 3px;
+  background-color: #000000;
+  display: block;
+  border-radius: 2px;
+  position: absolute;
+  transition: 0.2s;
+}
+#hmb span:first-child {
+  top: 0;
+}
+#hmb span:nth-child(2) {
+  top: 12px;
+}
+#hmb span:last-child {
+  top: 24px;
+}
+.sp_menu nav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 80%;
+  max-width: 500px;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  background-color: #ffffff;
+  z-index: 20;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateX(100%);
+  transition-property: all;
+  transition-duration: 0.2s;
+}
+.sp_menu nav ul {
+  display: inline-block;
+}
+.sp_menu nav ul h1 {
+  display: block;
+  margin-bottom: 16px;
+  font-size: 24px;
+  font-weight: 500;
+}
+.sp_menu nav ul li a {
+  display: block;
+  margin-bottom: 16px;
+}
+/* アクティブ */
+.active #hmb span:first-child {
+  top: 12px;
+  transform: rotate(45deg);
+}
+.active #hmb span:nth-child(2) {
+  opacity: 0;
+}
+.active #hmb span:last-child {
+  top: 12px;
+  transform: rotate(-45deg);
+}
+.active .sp_menu nav {
+  visibility: visible;
+  opacity: 1;
+  transform: translateX(0);
+}
+/* .active::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  right: 0;
+  background-color: #000000;
+  width: 100vw;
+  height: 10vh;
+  opacity: 0.4;
+  z-index: 10;
+} */
+/* アクティブ */
+
+main {
+  width: 80%;
+  margin: auto;
+}
+.mainContents {
+  display: flex;
+  width: 100%;
+  margin-bottom: 60px;
+}
+aside {
+  overflow-y: auto;
+  flex: 1 1 20%;
+  @media screen and (max-width: 960px) {
+    display: none;
+  }
+}
+.price_list {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  display: flex;
+  margin: 0 auto;
+  flex: 1 1 80%;
+}
+.price_list .area .contents {
+  display: flex;
+  @media screen and (max-width: 960px) {
+    display: inline;
+  }
+}
+.price_list .area {
+  text-align: center;
+  background-color: #ffffffb0;
+  width: 100%;
+  scroll-snap-align: start;
+  flex: none;
+}
+.price_list .area h1 {
+  font-size: 30px;
+  font-weight: 500;
+  margin: 20px 0;
+}
+.price_list img {
+  width: 50%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+.price_list table {
+  width: 50%;
+  margin: auto;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+.price_list table tr {
+  padding: 20px 0;
+  display: block;
+  border-bottom: 1px solid #000000;
+}
+.price_list table tr th {
+  width: 150px;
+}
+.phone_list h1 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  font-weight: 500;
+}
+.phone_list li {
+  margin-bottom: 10px;
+}
+
+.phone_list li a {
+  transition: 0.2s;
+}
+.phone_list li a:hover {
+  opacity: 50%;
+  transition: 0.2s;
+}
+/* オンライン査定 */
+.contact h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.contact .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  @media screen and (max-width: 960px) {
+    display: block;
+  }
+}
+.contact .row .col {
+  width: 48%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+.contact .row .col .text {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.contact img {
+  width: 48%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+/* 買取の流れ */
+.howTo h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.howTo .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  @media screen and (max-width: 960px) {
+    display: block;
+  }
+}
+.howTo .row .col {
+  width: 48%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+.howTo .row .col .text {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.howTo img {
+  width: 48%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+/* アクセス */
+.access h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.access .row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+  @media screen and (max-width: 960px) {
+    display: block;
+  }
+}
+.access .row .col {
+  width: 48%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+.access .row .col .text {
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+.access img {
+  width: 48%;
+  @media screen and (max-width: 960px) {
+    width: 100%;
+  }
+}
+.btn {
+  display: block;
+  width: 300px;
+  border: 1px solid black;
+  border-radius: 30px;
+  text-align: center;
+  padding: 14px 0;
+  font-size: 18px;
+  margin-bottom: 20px;
+  transition: 0.2s;
+}
+.btn:hover {
+  background-color: #000000;
+  color: #ffffff;
+  transition: 0.2s;
+}
+footer {
+  text-align: center;
+  width: 80%;
+  max-width: 1700px;
+  margin: 0 auto 30px;
+  align-items: center;
+  border-top: 1px solid black;
+  padding-top: 20px;
+}
+footer .row .logo {
+  margin: 5px 0 20px;
+  text-align: center;
+}
+footer .row .logo span {
+  font-size: 12px;
+  font-weight: 300;
+}
+footer .row .logo a {
+  display: inline-block;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+footer nav ul {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+footer nav ul li {
+  margin-left: 30px;
+  @media screen and (max-width: 960px) {
+    margin: auto;
+  }
+}
+footer nav ul li a {
+  font-weight: 500;
+  transition: 0.2s;
+}
+footer nav ul li a:hover {
+  opacity: 50%;
+  transition: 0.2s;
+}
+footer p {
+  font-size: 10px;
+}
+.access h2 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+/* contact */
+.contact .row .col table {
+  margin-bottom: 30px;
+}
+.contact .row .col table tr {
+  display: inline-block;
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+  @media screen and (max-width: 960px) {
+    font-size: 12px;
+  }
+}
+.contact .row .col table tr th {
+  width: 200px;
+  @media screen and (max-width: 960px) {
+    width: 100px;
+  }
+}
+/* howTo */
+
+/* access */
+main .info {
+  text-align: center;
+}
+main .info h1 {
+  font-size: 24px;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+main .info table {
+  margin: 20px auto;
+}
+main .info table tr {
+  display: flex;
+  padding: 10px;
+  border-bottom: 1px solid #000000;
+  text-align: left;
+  align-items: center;
+  @media screen and (max-width: 960px) {
+    font-size: 12px;
+  }
+}
+main .info table tr th {
+  width: 200px;
+  @media screen and (max-width: 960px) {
+    width: 80px;
+  }
+}
